@@ -4,8 +4,8 @@ set -e
 # Go to the main directory
 cd $GITHUB_WORKSPACE
 
-# Find the C/C++ source files
-SRC=$(git ls-tree --full-tree -r HEAD | grep -e "\.\(c\|h\|hpp\|cpp\|cxx\)\$" | cut -f 2)
+# Find the C/C++/CUDA source files
+SRC=$(git ls-tree --full-tree -r HEAD | grep -e "\.\(c\|h\|hpp\|cpp\|cxx\|cu\|cuh\)\$" | cut -f 2)
 
 # Run clang-format over all the matching files
 echo "Using style $1"
